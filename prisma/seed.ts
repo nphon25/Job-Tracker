@@ -178,7 +178,13 @@ async function main() {
 
 main()
   .catch((e) => {
-    console.error(e);
+    try {
+      console.error("Seed failed:", e?.message ?? e);
+      console.error("Error keys:", Object.getOwnPropertyNames(e));
+      console.error("Full error:", JSON.stringify(e, Object.getOwnPropertyNames(e), 2));
+    } catch (err) {
+      console.error("Failed to serialize error:", err, e);
+    }
     process.exit(1);
   })
   .finally(async () => {
