@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "tsx prisma/seed.ts",
+    "change-password": "tsx scripts/change-password.ts",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
